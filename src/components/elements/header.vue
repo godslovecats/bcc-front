@@ -2,7 +2,7 @@
 <header class="header">
   <div class="header__wrap">
     <div class="header-el">
-    <i class="material-icons md-36">menu</i>
+    <i class="material-icons md-35">menu</i>
     <div class="logo-img">
       <img src="../../../src/assets/img/bcc-logo.png" />
     </div>
@@ -17,7 +17,7 @@
     </nav>
 
     <div class="header-el">
-      <i class="material-icons md-26">search</i>
+      <i class="material-icons md-25">search</i>
       <div class="lang-changer">
         <div class="lang-changer__item">ru</div>
         <span class="delimeter">|</span>
@@ -30,8 +30,8 @@
 
 <script>
 export default {
-  name: "mainHeader"
-};
+  name: 'mainHeader'
+}
 </script>
 
 <style lang="less" scoped></style>
