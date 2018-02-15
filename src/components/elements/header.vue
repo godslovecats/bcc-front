@@ -4,14 +4,16 @@
     <div class="header-el">
     <i class="material-icons md-35">menu</i>
     <div class="logo-img">
-      <img src="../../../src/assets/img/bcc-logo.png" />
+      <router-link v-bind:to="'/'">
+        <img src="../../../src/assets/img/bcc-logo.png" />
+      </router-link>
     </div>
     </div>
 
     <nav class="nav">
       <a href="" class="nav__link">О нас</a>
-      <a href="" class="nav__link">Решения</a>
-      <a href="" class="nav__link">Проекты</a>
+      <a href="" class="nav__link"><router-link v-bind:to="'decidePage'" tag="span">Решения</router-link></a>
+      <a href="" class="nav__link"><router-link v-bind:to="'projectPage'" tag="span">Проекты</router-link></a>
       <a href="" class="nav__link">Производство</a>
       <a href="" class="nav__link">Контакты</a>
     </nav>
@@ -34,4 +36,48 @@ export default {
 }
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+@import (reference) "../../assets/styles/mixins.less";
+.header {
+    background: white;
+box-shadow: rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px, rgba(0, 0, 0, 0.2) 0px 2px 4px -1px;
+    width: 100%;
+    position: relative;
+    &__wrap {
+        .limit;
+        padding: 25px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.nav {
+    font-size: 1.2rem;
+    font-weight: 400;
+    &__link {
+        text-decoration: none;
+        color: gray;
+        margin: 0 15px;
+    }
+}
+.lang-changer {
+    display: flex;
+    align-items: center;
+    &__item {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+    .delimeter {
+        margin: 0 10px;
+        color: @gray;
+    }
+}
+.header-el {
+    display: flex;
+    align-items: center;
+    .material-icons {
+        margin: 0 25px;
+    }
+}
+</style>

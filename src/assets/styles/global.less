@@ -19,56 +19,6 @@ body {
     font-size: 14px;
 }
 
-///////header//////
-.nav {
-    font-size: 1.2rem;
-    font-weight: 400;
-    &__link {
-        text-decoration: none;
-        color: gray;
-        margin: 0 15px;
-    }
-}
-
-.header {
-    background: white;
-    box-shadow: rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px, rgba(0, 0, 0, 0.2) 0px 2px 4px -1px;
-    width: 100%;
-    &__wrap {
-        .limit;
-        padding: 30px 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-
-.lang-changer {
-    display: flex;
-    align-items: center;
-    &__item {
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 1.2rem;
-    }
-    .delimeter {
-        margin: 0 10px;
-        color: gray;
-    }
-}
-
-.logo-img {
-    margin: 0 30px;
-}
-
-.header-el {
-    display: flex;
-    align-items: center;
-    .material-icons {
-        margin: 0 25px;
-    }
-}
-
 .decide {
     background: white;
     padding: 35px;
@@ -77,16 +27,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 40px;
     &__title {
         text-align: center;
         font-size: 1.5rem;
         font-weight: 800;
         color: black;
     }
-    &:nth-last-child(-n+3) {
-        margin-bottom: 0;
-      }
 }
 
 .decide--long {
@@ -104,57 +50,31 @@ body {
     .info {
         width: 50%;
         &__title {
-            font-size: 50px;
+            font-size: 3rem;
             font-weight: 800;
-            line-height: 1.5em;
-            margin-bottom: 0.5em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
             color: black;
         }
         &__txt {
-font-size: 1.2rem;
-line-height: 1.5em;
+            font-size: 1.2rem;
+            line-height: 1.5;
         }
     }
-    .btn {
-
-    }
+    .btn {}
     &:nth-child(even) {
         .bg--gr1;
     }
 }
 
-.project {
-    &--long {
-        display: flex;
-        height: 430px;
-        .info {
-            padding: 70px;
-            padding-left: 100px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            .bg--gr1;
-            &__title {
-                font-size: 1.8rem;
-                line-height: 1.5em;
-                margin-bottom: 1em;
-                font-weight: 800;
-                color: black;
-            }
-            &__txt {
-                color: @gray800;
-                font-size: 1.2rem;
-                font-weight: 600;
-            }
-        }
-        .img {
-            img {
-                width: 430px;
-                height: 430px;
-            }
-        }
-    }
+.decide--simple {
+    background: white;
+    padding: 30px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1rem;
+    color: @gray600;
 }
 
 .new {
@@ -176,7 +96,7 @@ line-height: 1.5em;
         }
         .title {
             font-size: 1.2rem;
-            line-height: 1.5em;
+            line-height: 1.5;
             font-weight: 800;
             color: black;
         }

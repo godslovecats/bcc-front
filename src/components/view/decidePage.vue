@@ -1,27 +1,32 @@
 <template>
   <div>
     <router-view/>
-    <mainHeader />
     <section class="section intro">
-  <div class="container-s">
+  <div class="container">
   <div class="intro__txt">
-    <h1 class="section__title title txt--black">Крупнейшая компания в России</h1>
-    <p class="txt">в области комплексных проектов построения инфраструктуры зданий и сооружений Топ-3 (Cnews, 2014)</p>
+    <h1 class="section__title title">О решениях</h1>
+    <p class="txt">Такие проекты (программы проектов), как правило, включают в себя решение самого широкого спектра задач — от бизнес-консалтинга и внедрения программных приложений до монтажа технологических и инженерных систем. Это, в свою очередь, делает необходимым, во-первых, использование современных методов управления проектами и, во-вторых, наличия предметной и отраслевой экспертизы в соответствующих областях.</p>
   </div>
-  <div class="numbered numbered--centred numbered--b">
-    <div class="numbered__item">
-      <p class="num">24</p>
-      <p class="txt">лет опыта</p>
-    </div>
-        <div class="numbered__item">
-      <p class="num">300</p>
-      <p class="txt">проектов</p>
-    </div>
-        <div class="numbered__item">
-      <p class="num">700</p>
-      <p class="txt">специалистов</p>
-    </div>
-  </div>
+        <div class="grid-row">
+      <div class="grid-row__item decide--simple">
+        <p>АСУ технологическим процессом</p>
+      </div>
+            <div class="grid-row__item decide--simple">
+        <p>АСУ инженерными системами</p>
+      </div>
+            <div class="grid-row__item decide--simple">
+        <p>АСТУЭР</p>
+      </div>
+            <div class="grid-row__item decide--simple">
+        <p>АСУДД</p>
+      </div>
+            <div class="grid-row__item decide--simple">
+        <p>АСУ инженерными системами</p>
+      </div>
+            <div class="grid-row__item decide--simple">
+        <p>MES</p>
+      </div>
+        </div>
   </div>
 </section>
 <section class="section">
@@ -75,16 +80,11 @@
       <div class="container">
     <h2 class="section__title title txt--black">Примеры выполненных проектов</h2>
         <div class="grid-row">
-      <div class="grid-row__item project">
-          <h3 class="title"></h3>
-          <div class="social">
-              <p class="social__visit">Просмотров 124</p>
-              <div class="social__link">
-                  <i class="material-icons md-15">present_to_all</i>
-                  <i class="material-icons md-15">present_to_all</i>
-                  <i class="material-icons md-15">present_to_all</i>
-              </div>
-          </div>
+          <projectItemSocial />
+<projectItemSocial />
+            <div class="grid-row__item decide">
+        <h3 class="decide__title">Больше выполненных проектов</h3>
+        <button class="btn btn--base">Смотреть</button>
       </div>
         </div>
       </div>
@@ -93,13 +93,14 @@
 </template>
 
 <script>
-import mainHeader from "../elements/header.vue";
+import projectItemSocial from "../elements/projectItemSocial.vue";
+
 export default {
-  name: 'decidePage',
-    components: {
-    mainHeader
+  name: "decidePage",
+  components: {
+    projectItemSocial
   }
-}
+};
 </script>
 
 
@@ -110,47 +111,51 @@ export default {
   flex-direction: column;
   display: flex;
   align-items: center;
-  .bg--gr1;
-  .container {
-    max-width: 900px;
-  }
+  .bg--gr;
   &__txt {
-    text-align: center;
+    color: white;
+    margin-bottom: 40px;
     .title {
-      margin-bottom: 0;
+      margin-bottom: 0.5em;
     }
     .txt {
       font-size: 1.2rem;
-      line-height: 1.5em;
-      margin: 0 70px;
+      line-height: 1.5;
     }
   }
 }
 .decide-example {
-      .section__pad;
-    .bg--gr1;
-    .title {
-         text-align: center;
-    }
+  .section__pad;
+  .bg--gr1;
+  .title {
+    text-align: center;
+  }
 }
 .project {
-    .bg--gr;
-     padding: 35px;
-    padding-top: 70px;
-    height: 370px;
+  .bg--gr;
+  padding: 35px;
+  height: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__title {
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  .social {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    .title {
-color: white;
+    align-items: center;
+    color: white;
+    &__visit {
+      font-size: 1rem;
     }
-    .social {
-        &__visit {
-
-        }
-        &__link {
-
-        }
+    &__link {
+      .ico {
+        margin: 0 5px;
+      }
     }
+  }
 }
 </style>
