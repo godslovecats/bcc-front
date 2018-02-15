@@ -54,7 +54,7 @@
       </div>
     </div>
     <div class="section__btn section__btn--centred">
-      <button class="btn btn--white btn--one-third">На страницу решений</button>
+      <button class="btn btn--white btn--one-third"><router-link v-bind:to="'decidePage'" tag="span">На страницу решений</router-link></button>
     </div>
   </div>
 </section>
@@ -85,7 +85,7 @@
       </div>
     </div>
         <div class="section__btn section__btn--centred">
-      <button class="btn btn--base btn--one-third">На страницу решений</button>
+      <button class="btn btn--base btn--one-third"><router-link v-bind:to="'decidePage'" tag="span">На страницу решений</router-link></button>
     </div>
   </div>
 </section>
@@ -122,7 +122,7 @@
       </div>
     </div>
    <div class="section__btn section__btn--right">
-      <button class="btn btn--base btn--one-third">На страницу решений</button>
+      <button class="btn btn--base btn--one-third"><router-link v-bind:to="'decidePage'" tag="span">На страницу решений</router-link></button>
     </div>
   </div>
 </section>

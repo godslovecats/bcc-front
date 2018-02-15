@@ -89,6 +89,40 @@ body {
       }
 }
 
+.decide--long {
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url('../../../src/assets/img/new-mock.png') no-repeat center center;
+    background-size: 350px;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .info {
+        width: 50%;
+        &__title {
+            font-size: 50px;
+            font-weight: 800;
+            line-height: 1.5em;
+            margin-bottom: 0.5em;
+            color: black;
+        }
+        &__txt {
+font-size: 1.2rem;
+line-height: 1.5em;
+        }
+    }
+    .btn {
+
+    }
+    &:nth-child(even) {
+        .bg--gr1;
+    }
+}
+
 .project {
     &--long {
         display: flex;
