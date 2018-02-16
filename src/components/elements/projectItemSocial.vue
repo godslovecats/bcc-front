@@ -14,41 +14,41 @@
 
 <script>
 export default {
-  name: 'projectItemSocial'
-}
+  name: "projectItemSocial"
+};
 </script>
 
 
 <style lang="less" scoped>
 @import (reference) "../../assets/styles/mixins.less";
 .project {
-&--social {
-  .bg--gr;
-  padding: 35px;
-  height: 370px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  .title {
-    color: white;
-    font-size: 1.2rem;
-    line-height: 1.5;
-    cursor: pointer;
-  }
-  .social {
+  &--social {
+    .bg--gr;
+    padding: 35px;
+    height: 370px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    color: white;
-    &__visit {
-      font-size: 1rem;
+    .title {
+      color: white;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      cursor: pointer;
     }
-    &__link {
-      .ico {
-        margin: 0 5px;
+    .social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      &__visit {
+        font-size: 1rem;
+      }
+      &__link {
+        .ico {
+          margin: 0 5px;
+        }
       }
     }
   }
-}
 }
 </style>

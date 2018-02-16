@@ -30,51 +30,11 @@
   </div>
 </section>
 <section class="section">
-    <div class="decide--long">
-        <div class="container">
-        <div class="info">
-            <h2 class="info__title">АСУ инженерными системами</h2>
-            <p class="info__txt">Разработка проекта и полное оснащение зданиц и сооружений системами автоматизации и диспетчеризации инженерных систем</p>
-        </div>
-       <button class="btn btn--base btn--one-third">Перейти</button>
-        </div>
-    </div>
-        <div class="decide--long">
-        <div class="container">
-        <div class="info">
-            <h2 class="info__title">АСУ инженерными системами</h2>
-            <p class="info__txt">Разработка проекта и полное оснащение зданиц и сооружений системами автоматизации и диспетчеризации инженерных систем</p>
-        </div>
-       <button class="btn btn--base btn--one-third">Перейти</button>
-        </div>
-    </div>
-        <div class="decide--long">
-        <div class="container">
-        <div class="info">
-            <h2 class="info__title">АСУ инженерными системами</h2>
-            <p class="info__txt">Разработка проекта и полное оснащение зданиц и сооружений системами автоматизации и диспетчеризации инженерных систем</p>
-        </div>
-       <button class="btn btn--base btn--one-third">Перейти</button>
-        </div>
-    </div>
-        <div class="decide--long">
-        <div class="container">
-        <div class="info">
-            <h2 class="info__title">АСУ инженерными системами</h2>
-            <p class="info__txt">Разработка проекта и полное оснащение зданиц и сооружений системами автоматизации и диспетчеризации инженерных систем</p>
-        </div>
-       <button class="btn btn--base btn--one-third">Перейти</button>
-        </div>
-    </div>
-        <div class="decide--long">
-        <div class="container">
-        <div class="info">
-            <h2 class="info__title">АСУ инженерными системами</h2>
-            <p class="info__txt">Разработка проекта и полное оснащение зданиц и сооружений системами автоматизации и диспетчеризации инженерных систем</p>
-        </div>
-       <button class="btn btn--base btn--one-third">Перейти</button>
-        </div>
-    </div>
+<dicideItemLong/>
+<dicideItemLong/>
+<dicideItemLong/>
+<dicideItemLong/>
+<dicideItemLong/>
 </section>
 <section class="section decide-example">
       <div class="container">
@@ -82,10 +42,7 @@
         <div class="grid-row">
           <projectItemSocial />
 <projectItemSocial />
-            <div class="grid-row__item decide">
-        <h3 class="decide__title">Больше выполненных проектов</h3>
-        <button class="btn btn--base">Смотреть</button>
-      </div>
+<projectItemSocial />
         </div>
       </div>
 </section>
@@ -94,11 +51,13 @@
 
 <script>
 import projectItemSocial from "../elements/projectItemSocial.vue";
+import dicideItemLong from "../elements/decideItemLong.vue";
 
 export default {
   name: "decidePage",
   components: {
-    projectItemSocial
+    projectItemSocial,
+    dicideItemLong
   }
 };
 </script>

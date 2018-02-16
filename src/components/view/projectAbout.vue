@@ -108,7 +108,7 @@ export default {
     margin-bottom: 0;
   }
   &__title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 1rem;
     color: black;

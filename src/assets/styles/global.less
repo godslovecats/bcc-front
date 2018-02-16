@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: normal;
 }
 
 html,
@@ -19,54 +20,6 @@ body {
     font-size: 14px;
 }
 
-.decide {
-    background: white;
-    padding: 35px;
-    padding-top: 70px;
-    height: 370px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    &__title {
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: black;
-    }
-}
-
-.decide--long {
-    height: 550px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: url('../../../src/assets/img/new-mock.png') no-repeat center center;
-    background-size: 350px;
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .info {
-        width: 50%;
-        &__title {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: black;
-        }
-        &__txt {
-            font-size: 1.2rem;
-            line-height: 1.5;
-        }
-    }
-    .btn {}
-    &:nth-child(even) {
-        .bg--gr1;
-    }
-}
-
 .decide--simple {
     background: white;
     padding: 30px;
@@ -75,30 +28,4 @@ body {
     text-align: center;
     font-size: 1rem;
     color: @gray600;
-}
-
-.new {
-    background-color: white;
-    padding: 35px;
-    box-sizing: border-box;
-    &__img {
-        margin-bottom: 70px;
-        img {
-            width: 100%;
-            height: 250px;
-        }
-    }
-    &__info {
-        .date {
-            color: @gray800;
-            font-size: 1rem;
-            margin-bottom: 1em;
-        }
-        .title {
-            font-size: 1.2rem;
-            line-height: 1.5;
-            font-weight: 800;
-            color: black;
-        }
-    }
 }

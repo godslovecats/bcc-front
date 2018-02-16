@@ -27,30 +27,12 @@
   <div class="container">
     <h2 class="section__title title txt--white">Решения</h2>
     <div class="grid-row">
-      <div class="grid-row__item decide">
-        <h3 class="decide__title">АСУ инженерными системами</h3>
-        <button class="btn btn--base">Подробнее</button>
-      </div>
-            <div class="grid-row__item decide">
-        <h3 class="decide__title">АСУ технологическим процессом</h3>
-        <button class="btn btn--base">Подробнее</button>
-      </div>
-            <div class="grid-row__item decide">
-        <h3 class="decide__title">АСТУЭР</h3>
-        <button class="btn btn--base">Подробнее</button>
-      </div>
-            <div class="grid-row__item decide">
-        <h3 class="decide__title">Диспетчеризация</h3>
-        <button class="btn btn--base">Подробнее</button>
-      </div>
-            <div class="grid-row__item decide">
-        <h3 class="decide__title">MES</h3>
-        <button class="btn btn--base">Подробнее</button>
-      </div>
-            <div class="grid-row__item decide">
-        <h3 class="decide__title">АСУД</h3>
-        <button class="btn btn--base">Подробнее</button>
-      </div>
+      <decideItemBase />
+<decideItemBase />
+<decideItemBase />
+<decideItemBase />
+<decideItemBase />
+<decideItemBase />
     </div>
     <div class="section__btn section__btn--centred">
       <button class="btn btn--white btn--one-third"><router-link v-bind:to="'decidePage'" tag="span">На страницу решений</router-link></button>
@@ -90,34 +72,10 @@
   <div class="container">
     <h2 class="section__title title txt--black">Новости</h2>
         <div class="grid-row">
-      <div class="grid-row__item new">
-        <div class="new__img">
-          <img src="../../src/assets/img/new-mock.png" />
+          <newItem/>
+          <newItem/>
+          <newItem/>
         </div>
-        <div class="new__info">
-          <p class="date">3 ноября 2017</p>
-          <h4 class="title">Компания ВСС приняла участие в строительстве тренировочной базы</h4>
-        </div>
-      </div>
-      <div class="grid-row__item new">
-        <div class="new__img">
-          <img src="../../src/assets/img/new-mock.png" />
-        </div>
-        <div class="new__info">
-          <p class="date">3 ноября 2017</p>
-          <h4 class="title">Компания ВСС приняла участие в строительстве тренировочной базы</h4>
-        </div>
-      </div>
-            <div class="grid-row__item new">
-        <div class="new__img">
-          <img src="../../src/assets/img/new-mock.png" />
-        </div>
-        <div class="new__info">
-          <p class="date">3 ноября 2017</p>
-          <h4 class="title">Компания ВСС приняла участие в строительстве тренировочной базы</h4>
-        </div>
-      </div>
-    </div>
    <div class="section__btn section__btn--right">
       <button class="btn btn--base btn--one-third"><router-link v-bind:to="'decidePage'" tag="span">На страницу решений</router-link></button>
     </div>
@@ -128,12 +86,16 @@
 
 <script>
 import projectItemDashed from "./elements/projectItemDashed.vue";
+import newItem from "./elements/newItem.vue";
+import decideItemBase from "./elements/decideItemBase.vue";
 import VueTinySlider from "vue-tiny-slider";
 
 export default {
   name: "projectAbout",
   components: {
     projectItemDashed,
+    newItem,
+    decideItemBase,
     "tiny-slider": VueTinySlider
   }
 };
@@ -157,12 +119,12 @@ export default {
     cursor: pointer;
     outline: none;
     &--left {
-    left: -70px;
-    position: relative;
+      left: -70px;
+      position: relative;
     }
     &--right {
       right: -70px;
-    position: relative;
+      position: relative;
     }
   }
 }
