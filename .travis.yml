@@ -1,4 +1,0 @@
-install:
-- npm i
-script:
-- npm run dev
