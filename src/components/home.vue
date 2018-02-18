@@ -9,15 +9,15 @@
   </div>
   <div class="numbered numbered--centred numbered--b">
     <div class="numbered__item">
-      <p class="num">24</p>
+      <animate-number class="num" from="1" to="24" duration="1000" ></animate-number>
       <p class="txt">лет опыта</p>
     </div>
         <div class="numbered__item">
-      <p class="num">300</p>
+      <animate-number class="num" from="1" to="300" duration="1000" ></animate-number>
       <p class="txt">проектов</p>
     </div>
         <div class="numbered__item">
-      <p class="num">700</p>
+      <animate-number class="num" from="1" to="700" duration="1000" ></animate-number>
       <p class="txt">специалистов</p>
     </div>
   </div>
@@ -35,49 +35,39 @@
 <decideItemBase />
     </div>
     <div class="section__btn section__btn--centred">
-      <button class="btn btn--white btn--one-third"><router-link v-bind:to="'decidePage'" tag="span">На страницу решений</router-link></button>
+      <button class="btn btn--red btn--one-third"><router-link v-bind:to="'decidePage'" tag="span">На страницу решений</router-link></button>
     </div>
   </div>
 </section>
 <section class="section projects">
-  <div class="container">
-    <h2 class="section__title title txt--black">Реализованные проекты</h2>
-    <tiny-slider :mouse-drag="true"  items="1" speed='500' controlsContainer = ".slider-arrows">
+    <h2 class="section__title title txt--black container-l">Реализованные проекты</h2>
+    <tiny-slider startIndex="1" items="1" speed='500' controlsContainer = ".slider-arrows">
       <div>
       <projectItemDashed />
       </div>
       <div>
-      <projectItemDashed />
-      </div>
-            <div>
-      <projectItemDashed />
-      </div>
-            <div>
-      <projectItemDashed />
-      </div>
-            <div>
       <projectItemDashed />
       </div>
       </tiny-slider>
-            <div class="slider-arrows">
-		<i class="slider-arrows__item slider-arrows__item--left material-icons">keyboard_arrow_left</i>
-		<i class="slider-arrows__item slider-arrows__item--right material-icons">keyboard_arrow_right</i>
+<div class="slider-arrows">
+		<i class="slider-arrows__item slider-arrows__item--left"><v-icon class="w12" name="chevron-left"></v-icon> Предыдущий проект</i>
+		<i class="slider-arrows__item slider-arrows__item--right">Следующий проект <v-icon class="w12" name="chevron-right"></v-icon></i>
 </div>
-        <div class="section__btn section__btn--centred">
-      <button class="btn btn--base btn--one-third"><router-link v-bind:to="'decidePage'" tag="span">На страницу решений</router-link></button>
-    </div>
-  </div>
 </section>
 <section class="section news">
   <div class="container">
     <h2 class="section__title title txt--black">Новости</h2>
         <div class="grid-row">
-          <newItem/>
-          <newItem/>
-          <newItem/>
+          <newItem 
+      v-for="item in news"
+      v-bind:key="item.id"
+      v-bind:index="item.index"
+      v-bind:date="item.date"
+      v-bind:title="item.title"
+       />
         </div>
    <div class="section__btn section__btn--right">
-      <button class="btn btn--base btn--one-third"><router-link v-bind:to="'decidePage'" tag="span">На страницу решений</router-link></button>
+      <button class="btn btn--red"><router-link v-bind:to="'decidePage'" tag="span">Читать все новости</router-link></button>
     </div>
   </div>
 </section>
@@ -85,13 +75,46 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import projectItemDashed from "./elements/projectItemDashed.vue";
 import newItem from "./elements/newItem.vue";
 import decideItemBase from "./elements/decideItemBase.vue";
 import VueTinySlider from "vue-tiny-slider";
+import VueAnimateNumber from 'vue-animate-number'
+Vue.use(VueAnimateNumber)
+
+const newsApi = "http://localhost:3000/news";
+var self = this;
 
 export default {
   name: "projectAbout",
+  data() {
+    return {
+      news: []
+    };
+  },
+  created: function() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData: function() {
+      var xhr = new XMLHttpRequest();
+      var self = this;
+      xhr.open("GET", newsApi);
+      xhr.onload = function(data) {
+        self.news = JSON.parse(xhr.responseText);
+        console.log(self.news);
+      };
+      xhr.send();
+    },
+          formatter: function (num) {
+        return num.toFixed(2)
+      },
+
+      startAnimate: function () {
+        this.$refs.myNum.start()
+      }
+  },
   components: {
     projectItemDashed,
     newItem,
@@ -105,26 +128,29 @@ export default {
 @import (reference) "../assets/styles/mixins.less";
 
 .slider-arrows {
-  width: 1170px;
-  position: absolute;
-  padding: 0;
-  z-index: 10;
-  left: 0;
-  top: calc(50% - 25px);
+  .container-l;
+  padding: 0 35px;
+      position: relative;
+    z-index: 10;
+    width: 100%;
+    margin-top: -50px;
   display: flex !important;
   justify-content: space-between;
   &__item {
     display: inline-block;
-    font-size: 50px;
+    font-size: 1rem;
     cursor: pointer;
     outline: none;
+            .v-icon {
+          position: relative;
+          transition: left right 0.5s ease-in-out;
+        }
     &--left {
-      left: -70px;
       position: relative;
     }
     &--right {
-      right: -70px;
       position: relative;
+      color: white;
     }
   }
 }
@@ -155,10 +181,15 @@ export default {
   .bg--gr;
 }
 .projects {
-  .section__pad;
+      position: relative;
+      z-index: 1;
+      padding-top: 100px;
 }
 .news {
   .section__pad;
   .bg--gr1;
+    position: relative;
+    margin-top: -170px;
+    padding-top: 235px;
 }
 </style>

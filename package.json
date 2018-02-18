@@ -13,8 +13,11 @@
         "build": "node build/build.js"
     },
     "dependencies": {
+        "json-server": "^0.12.1",
         "normalize.css": "^8.0.0",
         "vue": "^2.5.2",
+        "vue-animate-number": "^0.4.2",
+        "vue-icon": "^2.0.0",
         "vue-router": "^3.0.1",
         "vue-tiny-slider": "^0.1.12"
     },

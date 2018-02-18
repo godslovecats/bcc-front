@@ -1,13 +1,11 @@
 <template>
 <header class="header">
   <div class="header__wrap">
-    <div class="header-el">
-    <i class="material-icons md-35">menu</i>
+      <div class="header__section">
     <div class="logo-img">
       <router-link v-bind:to="'/'">
         <img src="../../../src/assets/img/bcc-logo.png" />
       </router-link>
-    </div>
     </div>
 
     <nav class="nav">
@@ -17,14 +15,19 @@
       <a href="" class="nav__link">Производство</a>
       <a href="" class="nav__link">Контакты</a>
     </nav>
-
-    <div class="header-el">
-      <i class="material-icons md-25">search</i>
-      <div class="lang-changer">
+</div>
+    <div class="header__section">
+        <div class="header__tool"><v-icon class="w18" name="search"></v-icon> </div>
+        <div class="header__tool">
+                  <div class="lang-changer">
         <div class="lang-changer__item">ru</div>
         <span class="delimeter">|</span>
         <div class="lang-changer__item">en</div>
       </div>
+        </div>
+        <div class="header__tool">
+            <v-icon class="w48" name="menu"></v-icon> 
+        </div>
     </div>
   </div>
 </header>
@@ -50,14 +53,25 @@ box-shadow: rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10p
         justify-content: space-between;
         align-items: center;
     }
+    &__section {
+        display: flex;
+        align-items: center; 
+        .logo-img {
+            margin-right: 30px;
+        }
+    }
+    &__tool {
+        margin: 0 15px;
+    }
 }
 .nav {
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 0.8rem;
+    font-weight: 500;
     &__link {
         text-decoration: none;
         color: gray;
-        margin: 0 15px;
+        margin: 0 10px;
+        text-transform: uppercase;
     }
 }
 .lang-changer {
@@ -73,11 +87,5 @@ box-shadow: rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10p
         color: @gray;
     }
 }
-.header-el {
-    display: flex;
-    align-items: center;
-    .material-icons {
-        margin: 0 25px;
-    }
-}
+
 </style>
